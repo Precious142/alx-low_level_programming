@@ -1,20 +1,27 @@
 #include <stdio.h>
 /**
- * main - fibonacci 50
+ * main - block to execute
+ * Description: computes and prints
  * Return: Always 0.
  */
 int main(void)
 {
-unsigned long int i;
-unsigned long int bef = 1;
-unsigned long int aft = 2;
-printf("%lu", bef);
-for (i = 1; i < 50; i++)
+int i = 0;
+long int a = 0, b = 1, next;
+
+while (i < 50)
 {
-printf(", %lu", aft);
-aft += bef;
-bef = aft - bef;
+next = a + b;
+a = b;
+b = next;
+printf("%lu", next);
+
+if (i < 49)
+{
+printf(',');
 }
-printf('\n');
+i++
+}
+
 return (0);
 }
